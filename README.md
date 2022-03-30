@@ -109,3 +109,6 @@ docker volume rm <nome>
 
 -- Remover volumes não utilizados
 docker volume prune
+
+-- Criar volumes apenas consulta/Leitura ready/only
+docker run -v volume:data:ro
