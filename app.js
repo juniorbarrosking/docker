@@ -1,7 +1,7 @@
 const express = require('express')
 const res = require('express/lib/response')
 const app = express()
-const port = 3001
+const port = 3002
 
 app.get('/', (req, res) => {
     res.send('Olá minha imagem!')

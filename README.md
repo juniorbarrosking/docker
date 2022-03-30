@@ -60,3 +60,17 @@ docker cp <container>:/origem/arquivo.js ./destino/
 -- verificar analise e Processamento do container
 docker top <container>
 docker inspect
+docker stats -> verifica processamento
+
+-- Enviar imagens para o hub do docker
+docker login
+docker logout
+docker push <NOME IMAGEM> 
+docker push juniorbarros81/aulateste:tagname
+docker pull 
+
+-- Atualizando imagem
+1) Fazer build com tag diferente
+docker build -t juniorbarros81/aulateste:novaversao .
+2) Fazer push da nova imagem
+docker push juniorbarros81/aulateste:novaversao
