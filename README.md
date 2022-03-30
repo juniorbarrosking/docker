@@ -81,5 +81,31 @@ Maneira de persistir dados(manter dados) em aplicações e não depender dos con
 
 -- Tipos de Volumes --
 Anônimos (flag -v) cria com nomes aleatórios
+docker run -v /data
 Nomeados ()
-Binds mounts () salvar o arquivo do volume no PC local fora do docker 
+docker run volume_nomeado:/diretorio
+Binds mounts () salvar o arquivo do volume no PC local fora do docker - atualiza o projeto em tempo real
+docker run /dir/data:/data
+
+
+docker volume ls -> verifica todos os volumes
+
+docker run -d -p 8090:80 --name php_messages_container3 --rm -v volume_nomeado:/var/www/html/messages phpmessages
+                portapc:portaimagem
+
+docker run -d -p 8095:80 --name php_messages_container -v C:\Users\Junior\Documents\jr\docker\docker-php\messages:/var/www/html/messages --rm phpmessages
+
+-- Criar volumes manualmente
+docker volume create <nome>
+
+-- Listar Volumes
+docker volume ls
+
+-- Checar um volume
+docker volume inspect <nome>
+
+-- Remover volumes
+docker volume rm <nome>
+
+-- Remover volumes não utilizados
+docker volume prune
