@@ -74,3 +74,12 @@ docker pull
 docker build -t juniorbarros81/aulateste:novaversao .
 2) Fazer push da nova imagem
 docker push juniorbarros81/aulateste:novaversao
+
+*** Volumes ***
+
+Maneira de persistir dados(manter dados) em aplicações e não depender dos containers pra isso
+
+-- Tipos de Volumes --
+Anônimos (flag -v) cria com nomes aleatórios
+Nomeados ()
+Binds mounts () salvar o arquivo do volume no PC local fora do docker 
