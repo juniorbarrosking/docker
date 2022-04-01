@@ -112,3 +112,51 @@ docker volume prune
 
 -- Criar volumes apenas consulta/Leitura ready/only
 docker run -v volume:data:ro
+
+
+*** Network ***
+
+(Tipos de Conexão):
+
+-- Externa (API ou Servidor)
+
+-- Com o Host (Máquina que está executando o Docker)
+
+-- Entre Containers (Utiliza o driver bridge permitindo a comunicação entre 2 ou mais containers)
+
+(Tipos de Drivers):
+
+-- Bridge -> é o driver padrão
+   (Usado quando 2 containers precisam se conectar)
+-- Host
+   (Usado para conectar Container com o Host) 
+-- macvlan
+    (Usado para conexão através do MAC ADDRESS)
+-- none
+    (Usado para remover todas as conexões de rede do Container)
+-- plugins
+    (Permite extensões para simular/criar outras redes)
+
+(Comandos):
+
+-- Listar Redes
+docker network ls
+
+-- Criar Redes
+docker network create <nome>
+docker network create -d <driver> <nome>
+
+-- Remover Redes
+docker network rm <nome>
+docker network prune //remove redes em massa
+
+-- Conectar Container em uma rede
+docker network connect <rede> <container>
+
+-- Desconectar Container de uma rede
+docker network disconnect <rede> <container>
+
+-- Inspecionar Redes
+network inspect <nome>
+
+
