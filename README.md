@@ -160,3 +160,9 @@ docker network disconnect <rede> <container>
 network inspect <nome>
 
 
+*** YAML ***
+
+-- Linguagem utilizada para configuração, usada para configurar o Docker composer (.yml ou .yaml)
+
+
+

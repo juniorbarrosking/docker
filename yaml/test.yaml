@@ -1,0 +1,37 @@
+#comentário em YAML
+nome: "Junior"
+idade: 40
+altura: 1.75
+
+projeto:
+  versao: 2
+  arquivo: "teste.txt"
+
+strings:
+  texto1: Isto é uma string sem aspas
+  texto2: "Isto é uma string com aspas"
+
+#dados nulos (None)
+nulo: ~
+nulo1: null
+
+#booleanos
+verdadeiro: True
+verdadeiro1: On
+
+falso: False
+falso1: Off
+
+#Listas/Arrays
+opcao1: [1,2,3,4,5]
+opcao2:
+  - 1
+  - 2
+  - 3
+
+#Dicionarios
+obj: {a:1, b:2, c:3}
+
+objeto:
+  chave1: 1
+  chave2: 2
