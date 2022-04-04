@@ -165,4 +165,19 @@ network inspect <nome>
 -- Linguagem utilizada para configuração, usada para configurar o Docker composer (.yml ou .yaml)
 
 
+*** Docker Compose ***
+
+-- Ferramenta para rodar múltiplos containers (múltiplos builds e runs) essencial para projetos maiores.
+
+-- https://docs.docker.com/compose/install/ -> para instalar no Linux
+
+(Comandos):
+
+-- Rodando o Compose
+docker compose up
+CTRL+C -> fecha o Docker Composer
+docker compose up -d
+docker compose down -> para o serviço do docker compose que está rodando em background
+
+
 
