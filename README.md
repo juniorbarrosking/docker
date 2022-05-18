@@ -179,5 +179,70 @@ CTRL+C -> fecha o Docker Composer
 docker compose up -d
 docker compose down -> para o serviço do docker compose que está rodando em background
 
+*** Docker Swarm ***
+
+-- Conceitos fundamentais
+
+** Nodes: Instância(máquina) que participa do Swarm
+
+** Manager Node: Node que gerencia os demais Nodes
+
+** Worker Node: Nodes que trabalham em função do Manager
+
+** Service: Um conjunto de Tasks que o Manager Node manda para o Work Node executar
+
+** Task: Comandos que são executados nos Nodes
+
+(Comandos):
+
+docker swarm init  -> inicia serviço do swarm no docker e adiciona máquina com Node Manager
+-- caso dê erro usar o comando abaixo
+docker swarm init --advertise-addr <ip do host>
+
+docker swarm leave -f -> forçar saída do swarm mesmo se for manager
+
+docker node ls -> Listar Nodes(Máquinas) ativos
+docker node rm <ID> -> remove Node do swarm
+
+
+docker service ls -> Listar serviços ativos
+docker service rm <nome ou ID> -> Remover serviços 
+
+docker swarm join --token <token> <IP>:<porta> -> Adiciona nova máquina como Worker Node
+EX: docker swarm join --token SWMTKN-1-57m2tmr4m6omjjlp4jvuz109b3xd7omuqgebedoljzk0a110bv-3byo0pgxndxqqnprjbd2vm5hf 192.168.0.8:2377
+
+docker swarm join-token manager -> Verificar ou Recuperar token do manager
+
+docker service create --name <nome> <imagem> -> Subir serviços no Swarm
+
+EX: docker service create --name nginxswarm -p 80:80 nginx
+
+Docker service create --name <name> --replicas <numero> <imagem> -> Subir serviços no Swarm com réplicas
+
+EX: service create --name nginxswarm --replicas 3 -p 80:80 nginx
+
+docker service inspect <ID> -> Verificar informações sobre o serviço
+
+docker service ps <ID> -> Verifica quais containers estão seno ou já foram utilizados
+
+---
+docker stack deploy -c <ARQUIVO.YAML> <NOME> -> executa o arquivo do docker-compose
+
+docker service scale <NOME>=<QTD REPLICAS> -> Criar Replcias do Work Nodes
+---
+
+docker node update --availability drain <ID> -> Não receber mais Tasks'ordens' do Manager
+docker node update --availability active <ID>
+
+docker service update --image <IMAGEM> <SERVICO> -> Atualiza status do NOde
+EX: docker service update --image nginx:1.18.0 pdq
+
+docker network create --driver overlay swarm -> criar rede no swarm
+EX: usar comando --network no create para adicionar rede ao service
+
+docker service update --network <REDE> <NOME> -> conectar um serviço em uma rede com o update
+EX: docker service update --network-add <rede> <ID>  
+
+
 
 
