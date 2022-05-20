@@ -244,5 +244,32 @@ docker service update --network <REDE> <NOME> -> conectar um serviço em uma red
 EX: docker service update --network-add <rede> <ID>  
 
 
+*** Kubernetes ***
 
+** Control Plane: Onde é gerenciado o controle dos processos dos Nodes ou seja é a Máquian central
+** Nodes: Máquinas que são gerenciadas pelo Control Plane
+** Deployment: A execução de uma imagem/projeto em um Pod
+** Pod: um ou mais containers que estão em um Node
+** Services: Serviços que expõe os Pods ao mundo externo
+** kubectl: Cliente de linha de comando kubernetes
 
+-- Recursos para utilizar Kubernetes
+** Instalar Chocolatey
+    -- Windows
+       Acessar https://chocolatey.org/ -> getstarted - verificar passo a passo do site
+       Abrir Power Shel como Administrador
+** Documentação de instalação do client Kubernetes
+    -- Windows
+        https://kubernetes.io/docs/tasks/tools/
+** Virtualbox, Hyper-V ou o Docker
+** Instalar Minikube
+        https://minikube.sigs.k8s.io/docs/start/ or choco install minikube
+
+(Comandos)
+minikube start --driver=docker -> Inicia minikube driver pode ser vitualbox,hyperv e docker
+minikube stop -> Para o minikube
+minikube status -> verifica o status
+minikube dashboard -> visualiza dashboard do minikube
+minikube dashboard --url -> visualizar a url da dashboard
+
+-- Deployment -> Cria serviços que vão rodar nos Pods
